@@ -23,7 +23,7 @@ import (
 	"github.com/tarm/serial"
 	"labix.org/v2/mgo"
 	"encoding/json"
-	"github.com/ldln/landline-basestation/cryptoWrapper"
+	"github.com/ldln/core/cryptoWrapper"
 )
 
 func main() {
