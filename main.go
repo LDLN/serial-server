@@ -92,8 +92,9 @@ func main() {
 			}
 			log.Printf(string(byt[:]))
 			
-			ciphertext := cryptoWrapper.Encrypt(string(byt[:]), username, password)
-			if ciphertext != "" {
+			dek := cryptoWrapper.GetKeyFromUsernamePassword(username, password)
+			ciphertext := cryptoWrapper.Encrypt(dek, byt)
+			if ciphertext != nil {
 				object_map["key_value_pairs"] = ciphertext
 			
 				// db insert
